@@ -17,4 +17,11 @@ pipeline {
                    }
                 }
         }
+        post {
+                Always {
+                mail to: 'hkkumawat4466@gmail.com',
+                subject: "Failed Pipeline:",
+                body: "Something is wrong with code pull or may be conflicts occur."
+                }
+        }
 }
