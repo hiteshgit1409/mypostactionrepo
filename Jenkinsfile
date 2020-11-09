@@ -19,10 +19,10 @@ pipeline {
         }
         post {
                 always {
-                        emailext attachLog: true, body:
-                                "Something is wrong with code pull or may be conflicts occur."
-                                subject: "Failed Pipeline:",
-                                to: 'hiteshkumawat7878@gmail.com'
+                        emailext attachLog: true,
+                                body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
+                                recipientProviders: [developers(), requestor()],
+                                subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
                                 
                 }
         }
