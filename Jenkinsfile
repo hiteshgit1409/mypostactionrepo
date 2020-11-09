@@ -21,7 +21,7 @@ pipeline {
                 always {
                 mail to: 'hiteshkumawat7878@gmail.com',
                 subject: "Failed Pipeline:",
-                emailext attachLog: true, attachmentsPattern: 'generatedFile.txt',
+                emailext attachLog: true,
                 body: "Something is wrong with code pull or may be conflicts occur."
                 }
         }
