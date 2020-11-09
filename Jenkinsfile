@@ -19,10 +19,11 @@ pipeline {
         }
         post {
                 always {
-                mail to: 'hiteshkumawat7878@gmail.com',
-                subject: "Failed Pipeline:",
-                emailext attachLog: true,
-                body: "Something is wrong with code pull or may be conflicts occur."
+                        emailext attachLog: true, body:
+                                "Something is wrong with code pull or may be conflicts occur."
+                                subject: "Failed Pipeline:",
+                                to: 'hiteshkumawat7878@gmail.com'
+                                
                 }
         }
 }
