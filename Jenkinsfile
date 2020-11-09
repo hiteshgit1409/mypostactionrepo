@@ -21,7 +21,6 @@ pipeline {
                 always {
                         emailext attachLog: true,
                                 body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
-                                recipientProviders: "hiteshkumawat7878@gmail.com",
                                 subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
                                 to: "hiteshkumawat7878@gmail.com"
                                 
